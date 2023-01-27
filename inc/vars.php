@@ -5,7 +5,7 @@ define("DB_DATABASE", "tiny");
 define("DB_USERNAME", "root");
 define("DB_PASSWORD", "");
 
-define("SHORTLINK_PREFIX", "http://".$_SERVER['SERVER_NAME']."/"); // with trailing slash
+define("SHORTLINK_PREFIX", "https://".$_SERVER['SERVER_NAME']."/"); // with trailing slash
 define("CONTACT_EMAIL", "support@".$_SERVER['SERVER_NAME']); // please provide a valid email
 
 define("reCAPTCHA_ENABLED", false); // true or false; reCAPTCHA integration is an optional feature
@@ -15,9 +15,9 @@ define("reCAPTCHA_LANG", "en"); // reCAPTCHA supported 40+ languages listed here
 
 define("SHORTLINK_CODE_CHARS", "123456789bcdfghjkmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"); // You must not change these once you start creating ShortLinks
 
-define("FORWADER_PREVIEW", true); // enabling this feature prevents automatic redirection to malicious websites; toggling this feature requires clearing of cache
+define("FORWADER_PREVIEW", false); // enabling this feature prevents automatic redirection to malicious websites; toggling this feature requires clearing of cache
 
-define("FOOTER_TXT", 'Princess Jhia v0.1.5'); // footer text
+define("FOOTER_TXT", 'BagaTon.com @2023'); // footer text
 
 // Any ShortLink that matches with the keys of this array will be blocked. - ACCEPTS SHELL WILDCARD PATTERNS
 $kw_blacklist = array (

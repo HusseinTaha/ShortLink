@@ -44,9 +44,13 @@ try {
   $url = $shortLink->shortCodeToUrl($forwardSC);
 }
 catch (\Exception $e) {
-  header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");
-  include_once('./inc/page.not_found.php');
+
+  header('Location: https://bagaton.com');
   exit;
+
+  // header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");
+  // include_once('./inc/page.not_found.php');
+  // exit;
 }
 
 if(!FORWADER_PREVIEW) {

@@ -4,11 +4,18 @@ if(strtolower(basename($_SERVER["SCRIPT_FILENAME"])) === strtolower("page.header
   header('Location: /');
   //echo "Access Denied";
 	exit;
-}
+} 
+$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+if($actual_link == "https://bagaton.link/" || $actual_link == "https://bagaton.link" ) 
+{
+  header('Location: https://bagaton.com');
+  exit;
+} 
+
 ?><!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ShortLink | URL Shortener</title>
+    <title>Bagaton ShortLink | URL Shortener</title>
     <link rel="stylesheet" href="/assets/design.css<?='?'.slugify(FOOTER_TXT);?>">
     <link rel="stylesheet" href="/assets/bulma.css<?='?'.slugify(FOOTER_TXT);?>">
     <link rel="stylesheet" href="/assets/font-awesome.css<?='?'.slugify(FOOTER_TXT);?>">
@@ -55,7 +62,8 @@ if(strtolower(basename($_SERVER["SCRIPT_FILENAME"])) === strtolower("page.header
                    <?=$_SERVER['SERVER_NAME']?>
                  </h1></a>
                  <h2 class="subtitle">
-                   ShortLink <span style="margin-left: 14px; margin-right: 14px;">|</span> URL Shortener
+                   ShortLink <span style="margin-left: 14px; margin-right: 14px;">|</span> URL Shortener For 
+                   <a href="https://bagaton.com" target="_blank" rel="noopener">BagaTon.com</a>
                  </h2>
                </div>
                <div class="column donate">
